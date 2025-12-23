@@ -1,0 +1,30 @@
+# Environment variables
+.env
+
+# Bot data files
+bot_stats.json
+chat_ids.txt
+premium_users.txt
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+
+# Virtual environment
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db

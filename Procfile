@@ -1,0 +1,1 @@
+worker: python ott_scraper_bot.py
