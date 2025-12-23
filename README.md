@@ -11,7 +11,7 @@ A Telegram bot that scrapes high-quality posters and content information from 13
 - 🎯 Supports major OTT platforms:
   - Amazon Prime Video
   - Hulu
-  - Zee5
+  - Z5
   - Airtel Xstream
   - SunNext, Stage, Adda, WeTV
   - Plex, IQIYI, Aha, Shemaroo
@@ -51,7 +51,7 @@ A Telegram bot that scrapes high-quality posters and content information from 13
 1. Start the bot by sending `/start`
 2. Use platform-specific commands with URLs:
    - `/prime https://www.primevideo.com/detail/...`
-   - `/zee https://www.zee5.com/...`
+   - `/z5 https://www.zee5.com/...`
    - `/hulu https://www.hulu.com/...`
    - And more...
 
@@ -70,7 +70,7 @@ A Telegram bot that scrapes high-quality posters and content information from 13
 
 - Amazon Prime Video (`/prime`)
 - Hulu (`/hulu`)
-- Zee5 (`/zee`)
+- Z5 (`/z5`)
 - Airtel Xstream (`/airtel`)
 - SunNext (`/sunnext`)
 - Stage (`/stage`)

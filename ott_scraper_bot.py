@@ -67,7 +67,7 @@ startup_button = InlineKeyboardMarkup(
 # ===== OTT DOMAIN MAP =====
 OTT_DOMAIN_MAP = {
     "primevideo.com": "prime",
-    "zee5.com": "zee",
+    "zee5.com": "z5",
     "airtelxstream.in": "airtel",
     "stage.in": "stage",
     "aha.video": "aha",
@@ -90,7 +90,7 @@ OTT_APIS = {
     "shemaroo": {"url": "https://hgbots.vercel.app/bypaas/asa.php", "type": "general"},
     "apple": {"url": "https://appletv.pbx1bots.workers.dev/", "type": "general"},
     "airtel": {"url": "https://airtelxstream.pbx1bots.workers.dev/", "type": "airtel"},
-    "zee": {"url": "https://zee5.pbx1bots.workers.dev/", "type": "zee"},
+    "z5": {"url": "https://zee5.pbx1bots.workers.dev/", "type": "z5"},
     "prime": {"url": "https://primevideo.pbx1bots.workers.dev/", "type": "prime"},
     "bms": {"url": "https://bms.pbx1.workers.dev/", "type": "general"},
     # New PBX1 API endpoints
@@ -138,7 +138,7 @@ async def fetch_ott_data(platform: str, ott_url: str):
         elif api_type == "airtel":
             # Airtel Xstream specific logic
             params = {"url": ott_url}
-        elif api_type == "zee":
+        elif api_type == "z5":
             # Zee5 specific logic
             params = {"url": ott_url}
         else:
@@ -177,7 +177,7 @@ async def format_content_info(data: dict, platform: str, ott_url: str, update: U
     """
     try:
         # Extract information with platform-specific logic
-        if platform in ["prime", "airtel", "zee"]:
+        if platform in ["prime", "airtel", "z5"]:
             # Handle special case for ZEE where title might be a list
             raw_title = data.get("title", "Unknown Title")
             if isinstance(raw_title, list) and len(raw_title) > 0:
@@ -446,7 +446,7 @@ Fetches high-quality (HD / 4K) posters from official OTT platforms using direct 
 ━━━━━━━━━━━━━━━
 🎬 <b>Main OTT Commands</b>
 <code>/prime</code>   – Amazon Prime Video  
-<code>/zee</code>     – Zee5  
+<code>/z5</code>     – ZEE platform  
 <code>/airtel</code>  – Airtel Xstream  
 <code>/stage</code>   – Stage  
 <code>/aha</code>     – Aha  
@@ -500,7 +500,7 @@ async def zee_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     # Save chat ID for startup messages
     save_chat_id(update.effective_chat.id)
     
-    await handle_ott_command(update, context, "zee")
+    await handle_ott_command(update, context, "z5")
 
 async def prime_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     # Save chat ID for startup messages
@@ -636,7 +636,7 @@ async def about_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 🎞️ <b>Supported Platforms:</b>
  ┃ Amazon Prime Video • Hulu
- ┃ Zee5 • Airtel Xstream
+ ┃ Z5 • Airtel Xstream
  ┃ SunNext • Stage • Adda
  ┃ WeTV • Plex • IQIYI
  ┃ Aha • Shemaroo • Apple TV
@@ -1314,7 +1314,7 @@ def main():
     application.add_handler(CommandHandler("shemaroo", general_ott_cmd))
     application.add_handler(CommandHandler("apple", general_ott_cmd))
     application.add_handler(CommandHandler("airtel", airtel_cmd))
-    application.add_handler(CommandHandler("zee", zee_cmd))
+    application.add_handler(CommandHandler("z5", zee_cmd))
     application.add_handler(CommandHandler("prime", prime_cmd))
     application.add_handler(CommandHandler("bms", general_ott_cmd))
     # Register new platform command handlers

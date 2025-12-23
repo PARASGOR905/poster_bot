@@ -21,6 +21,7 @@ project/
 │── Procfile
 │── .gitignore
 │── run.bat   (optional, local use only)
+└── DEPLOYMENT.md (this file)
 ```
 
 ### 2. Push Code to GitHub
